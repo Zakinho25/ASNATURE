@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASNATURE - Cosmétiques Naturels Artisanaux</title>
+    <meta name="description" content="Soins naturels, fabrication artisanale. Beauté simple — ingrédients purs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sage-green: #9BAF98;
+            --natural-beige: #F6EFE6;
+            --earth-brown: #7B5E3A;
+            --off-white: #FDFCFA;
+            --soft-ochre: #D4A373;
+            --deep-sage: #6B7F68;
+            --charcoal: #2C2C2C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--off-white);
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(253, 252, 250, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(155, 175, 152, 0.2);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--earth-brown);
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: var(--sage-green);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--sage-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-green);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.3rem;
+            color: var(--earth-brown);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .icon-btn:hover {
+            color: var(--sage-green);
+            transform: translateY(-2px);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--soft-ochre);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+        }
+
+        .whatsapp-btn:hover {
+            background: #20BA5A;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--earth-brown);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--natural-beige) 0%, var(--off-white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(155, 175, 152, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(30px, -30px) rotate(5deg);
+            }
+            66% {
+                transform: translate(-20px, 20px) rotate(-5deg);
+            }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-text h1 {
+            font-size: 4.5rem;
+            color: var(--earth-brown);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-text .tagline {
+            font-size: 1.4rem;
+            color: var(--deep-sage);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            max-width: 500px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--earth-brown);
+            color: white;
+            box-shadow: 0 4px 15px rgba(123, 94, 58, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--deep-sage);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(123, 94, 58, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--earth-brown);
+            border: 2px solid var(--earth-brown);
+        }
+
+        .btn-secondary:hover {
+            background: var(--earth-brown);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInRight 1s ease-out;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            padding: 3rem 5%;
+            background: var(--natural-beige);
+            border-top: 1px solid rgba(155, 175, 152, 0.2);
+            border-bottom: 1px solid rgba(155, 175, 152, 0.2);
+        }
+
+        .trust-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .trust-item:nth-child(1) { animation-delay: 0.1s; }
+        .trust-item:nth-child(2) { animation-delay: 0.2s; }
+        .trust-item:nth-child(3) { animation-delay: 0.3s; }
+        .trust-item:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .trust-icon {
+            font-size: 2.5rem;
+            color: var(--sage-green);
+        }
+
+        .trust-text h4 {
+            font-size: 1.1rem;
+            color: var(--earth-brown);
+            margin-bottom: 0.2rem;
+        }
+
+        .trust-text p {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            opacity: 0.8;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            color: var(--earth-brown);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--deep-sage);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .product-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 0.8rem 2rem;
+            background: transparent;
+            border: 2px solid var(--sage-green);
+            color: var(--earth-brown);
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background: var(--sage-green);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+            background: var(--natural-beige);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.08);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--soft-ochre);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-category {
+            font-size: 0.85rem;
+            color: var(--sage-green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            color: var(--earth-brown);
+            margin-bottom: 0.8rem;
+        }
+
+        .product-description {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        .product-ingredients {
+            font-size: 0.85rem;
+            color: var(--deep-sage);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--natural-beige);
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            color: var(--earth-brown);
+            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .icon-action-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--sage-green);
+            background: transparent;
+            color: var(--sage-green);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-action-btn:hover {
+            background: var(--sage-green);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .add-to-cart-btn {
+            background: var(--earth-brown);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .add-to-cart-btn:hover {
+            background: var(--deep-sage);
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 6rem 5%;
+            background: var(--natural-beige);
+        }
+
+        .about-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            color: var(--earth-brown);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-values {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            color: var(--sage-green);
+        }
+
+        .value-text h4 {
+            font-size: 1.2rem;
+            color: var(--earth-brown);
+            margin-bottom: 0.3rem;
+        }
+
+        .value-text p {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            opacity: 0.8;
+        }
+
+        /* Instagram Feed */
+        .instagram-section {
+            padding: 6rem 5%;
+        }
+
+        .instagram-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .instagram-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .instagram-header h2 {
+            font-size: 3rem;
+            color: var(--earth-brown);
+            margin-bottom: 1rem;
+        }
+
+        .instagram-handle {
+            font-size: 1.2rem;
+            color: var(--sage-green);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .instagram-handle:hover {
+            color: var(--earth-brown);
+            transform: translateY(-2px);
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .instagram-post {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .instagram-post img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .instagram-post:hover img {
+            transform: scale(1.1);
+        }
+
+        .instagram-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(123, 94, 58, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .instagram-post:hover .instagram-overlay {
+            opacity: 1;
+        }
+
+        .overlay-stats {
+            color: white;
+            display: flex;
+            gap: 2rem;
+            font-size: 1.2rem;
+        }
+
+        /* Newsletter */
+        .newsletter-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, var(--sage-green) 0%, var(--deep-sage) 100%);
+            color: white;
+        }
+
+        .newsletter-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .newsletter-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .newsletter-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1.2rem 1.5rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            padding: 1.2rem 2.5rem;
+            background: var(--earth-brown);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--soft-ochre);
+            transform: translateY(-2px);
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 6rem 5%;
+            background: var(--off-white);
+        }
+
+        .testimonials-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 6rem;
+            color: var(--sage-green);
+            opacity: 0.2;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--sage-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            color: var(--earth-brown);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info .stars {
+            color: var(--soft-ochre);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--sage-green);
+        }
+
+        .footer-section p {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--sage-green);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(155, 175, 152, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--sage-green);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.6;
+        }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            right: -450px;
+            top: 0;
+            width: 450px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+            z-index: 2000;
+            transition: right 0.4s ease;
+            overflow-y: auto;
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 2rem;
+            background: var(--natural-beige);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .cart-header h3 {
+            font-size: 1.8rem;
+            color: var(--earth-brown);
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--earth-brown);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .close-cart:hover {
+            transform: rotate(90deg);
+        }
+
+        .cart-items {
+            padding: 2rem;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--natural-beige);
+        }
+
+        .cart-item-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-details h4 {
+            font-size: 1.1rem;
+            color: var(--earth-brown);
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item-price {
+            font-size: 1.2rem;
+            color: var(--sage-green);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .qty-btn {
+            width: 30px;
+            height: 30px;
+            border: 1px solid var(--sage-green);
+            background: transparent;
+            color: var(--sage-green);
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .qty-btn:hover {
+            background: var(--sage-green);
+            color: white;
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .remove-item:hover {
+            transform: scale(1.2);
+        }
+
+        .cart-footer {
+            padding: 2rem;
+            background: var(--natural-beige);
+            position: sticky;
+            bottom: 0;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .cart-total span:last-child {
+            color: var(--earth-brown);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--earth-brown);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        .checkout-btn:hover {
+            background: var(--deep-sage);
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-checkout {
+            width: 100%;
+            padding: 1.2rem;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .whatsapp-checkout:hover {
+            background: #20BA5A;
+            transform: translateY(-2px);
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .empty-cart-icon {
+            font-size: 4rem;
+            color: var(--sage-green);
+            opacity: 0.3;
+            margin-bottom: 1rem;
+        }
+
+        .empty-cart p {
+            font-size: 1.2rem;
+            color: var(--charcoal);
+            opacity: 0.6;
+        }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text .tagline {
+                font-size: 1.1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .product-categories {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">ASNATURE</a>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#boutique">Boutique</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#ingredients">Ingrédients</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn" id="searchBtn" aria-label="Rechercher">🔍</button>
+                <button class="icon-btn" id="cartBtn" aria-label="Panier">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <a href="https://wa.me/212XXXXXXXXX" class="whatsapp-btn" target="_blank">
+                    📱 WhatsApp
+                </a>
+                <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Mon Panier</h3>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <div class="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <p>Votre panier est vide</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">0 MAD</span>
+            </div>
+            <button class="checkout-btn">Commander en ligne</button>
+            <button class="whatsapp-checkout" id="whatsappCheckout">
+                📱 Commander via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Beauté Pure, Naturellement</h1>
+                <p class="tagline">Soins naturels, fabrication artisanale</p>
+                <p>Découvrez nos cosmétiques artisanaux, fabriqués avec amour à partir d'ingrédients naturels soigneusement sélectionnés. Chaque produit est une invitation à prendre soin de vous, naturellement.</p>
+                <div class="cta-buttons">
+                    <a href="#boutique" class="btn-primary">Découvrir la boutique</a>
+                    <a href="#apropos" class="btn-secondary">Notre histoire</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1556228994-d6b1971f174c?w=800&h=600&fit=crop" alt="Produits naturels ASNATURE" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <div class="trust-badges">
+        <div class="trust-content">
+            <div class="trust-item">
+                <div class="trust-icon">🌿</div>
+                <div class="trust-text">
+                    <h4>100% Naturel</h4>
+                    <p>Ingrédients purs</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🤲</div>
+                <div class="trust-text">
+                    <h4>Fait Main</h4>
+                    <p>Fabrication artisanale</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🚚</div>
+                <div class="trust-text">
+                    <h4>Livraison Rapide</h4>
+                    <p>Partout au Maroc</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">💚</div>
+                <div class="trust-text">
+                    <h4>Éco-responsable</h4>
+                    <p>Démarche durable</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="products-section scroll-reveal" id="boutique">
+        <div class="section-header">
+            <h2>Nos Produits</h2>
+            <p>Des soins naturels pour sublimer votre beauté au quotidien</p>
+        </div>
+
+        <div class="product-categories">
+            <button class="category-btn active" data-category="tous">Tous</button>
+            <button class="category-btn" data-category="savons">Savons</button>
+            <button class="category-btn" data-category="huiles">Huiles</button>
+            <button class="category-btn" data-category="capillaires">Soins Capillaires</button>
+            <button class="category-btn" data-category="coffrets">Coffrets</button>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <!-- Product 1 -->
+            <div class="product-card" data-category="savons">
+                <div class="product-image">
+                    <span class="product-badge">Bestseller</span>
+                    <img src="https://images.unsplash.com/photo-1585933646386-6b83e4093186?w=400&h=350&fit=crop" alt="Savon à l'argan" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Savons</span>
+                    <h3>Savon à l'Argan</h3>
+                    <p class="product-description">Savon artisanal enrichi à l'huile d'argan bio. Nourrit et hydrate en profondeur.</p>
+                    <p class="product-ingredients">Huile d'argan, beurre de karité, huile d'olive</p>
+                    <div class="product-footer">
+                        <span class="product-price">85 MAD</span>
+                        <div class="product-actions">
+                            <button class="icon-action-btn" title="Voir les détails">👁️</button>
+                            <button class="add-to-cart-btn" data-product="Savon à l'Argan" data-price="85">
+                                🛒 Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" data-category="huiles">
+                <div class="product-image">
+                    <span class="product-badge">Bio</span>
+                    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400&h=350&fit=crop" alt="Huile de figue de barbarie" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Huiles</span>
+                    <h3>Huile de Figue de Barbarie</h3>
+                    <p class="product-description">L'or du désert pour une peau éclatante. Anti-âge naturel et puissant.</p>
+                    <p class="product-ingredients">100% huile de pépins de figue de barbarie</p>
+                    <div class="product-footer">
+                        <span class="product-price">320 MAD</span>
+                        <div class="product-actions">
+                            <button class="icon-action-btn" title="Voir les détails">👁️</button>
+                            <button class="add-to-cart-btn" data-product="Huile de Figue de Barbarie" data-price="320">
+                                🛒 Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" data-category="capillaires">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400&h=350&fit=crop" alt="Masque capillaire" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Soins Capillaires</span>
+                    <h3>Masque Capillaire Réparateur</h3>
+                    <p class="product-description">Répare et nourrit les cheveux abîmés. Résultat visible dès la première application.</p>
+                    <p class="product-ingredients">Huile de ricin, aloe vera, kératine végétale</p>
+                    <div class="product-footer">
+                        <span class="product-price">150 MAD</span>
+                        <div class="product-actions">
+                            <button class="icon-action-btn" title="Voir les détails">👁️</button>
+                            <button class="add-to-cart-btn" data-product="Masque Capillaire Réparateur" data-price="150">
+                                🛒 Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card" data-category="savons">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1585933646386-6b83e4093186?w=400&h=350&fit=crop" alt="Savon au lait de chèvre" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Savons</span>
+                    <h3>Savon au Lait de Chèvre</h3>
+                    <p class="product-description">Douceur et hydratation pour les peaux sensibles. Adapté à toute la famille.</p>
+                    <p class="product-ingredients">Lait de chèvre bio, miel, huile d'amande douce</p>
+                    <div class="product-footer">
+                        <span class="product-price">75 MAD</span>
+                        <div class="product-actions">
+                            <button class="icon-action-btn" title="Voir les détails">👁️</button>
+                            <button class="add-to-cart-btn" data-product="Savon au Lait de Chèvre" data-price="75">
+                                🛒 Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card" data-category="huiles">
+                <div class="product-image">
+                    <span class="product-badge">Nouveau</span>
+                    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400&h=350&fit=crop" alt="Sérum visage" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Huiles</span>
+                    <h3>Sérum Visage Éclat</h3>
+                    <p class="product-description">Concentré d'actifs naturels pour une peau lumineuse et unifiée.</p>
+                    <p class="product-ingredients">Huile de rose musquée, vitamine E, huile de jojoba</p>
+                    <div class="product-footer">
+                        <span class="product-price">195 MAD</span>
+                        <div class="product-actions">
+                            <button class="icon-action-btn" title="Voir les détails">👁️</button>
+                            <button class="add-to-cart-btn" data-product="Sérum Visage Éclat" data-price="195">
+                                🛒 Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card" data-category="coffrets">
+                <div class="product-image">
+                    <span class="product-badge">-15%</span>
+                    <img src="https://images.unsplash.com/photo-1556228994-d6b1971f174c?w=400&h=350&fit=crop" alt="Coffret découverte" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Coffrets</span>
+                    <h3>Coffret Découverte</h3>
+                    <p class="product-description">Une sélection de nos meilleurs produits pour découvrir l'univers ASNATURE.</p>
+                    <p class="product-ingredients">3 savons + 1 huile + 1 soin capillaire</p>
+                    <div class="product-footer">
+                        <span class="product-price">450 MAD</span>
+                        <div class="product-actions">
+                            <button class="icon-action-btn" title="Voir les détails">👁️</button>
+                            <button class="add-to-cart-btn" data-product="Coffret Découverte" data-price="450">
+                                🛒 Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section scroll-reveal" id="apropos">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1556228994-d6b1971f174c?w=600&h=500&fit=crop" alt="Fabrication artisanale" loading="lazy">
+            </div>
+            <div class="about-text">
+                <h2>Notre Histoire</h2>
+                <p>ASNATURE est née d'une passion pour les cosmétiques naturels et d'un profond respect pour la nature. Chaque produit est fabriqué à la main avec des ingrédients soigneusement sélectionnés, dans le respect des traditions ancestrales et de l'environnement.</p>
+                <p>Notre mission est simple : vous offrir des soins authentiques qui prennent soin de votre peau tout en préservant notre planète. Nous croyons que la beauté doit être accessible, naturelle et responsable.</p>
+                
+                <div class="about-values">
+                    <div class="value-item">
+                        <div class="value-icon">🌱</div>
+                        <div class="value-text">
+                            <h4>Ingrédients Naturels</h4>
+                            <p>100% d'origine naturelle</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">♻️</div>
+                        <div class="value-text">
+                            <h4>Éco-responsable</h4>
+                            <p>Emballages recyclables</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🐰</div>
+                        <div class="value-text">
+                            <h4>Cruelty-free</h4>
+                            <p>Non testé sur animaux</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🇲🇦</div>
+                        <div class="value-text">
+                            <h4>Made in Morocco</h4>
+                            <p>Fabrication locale</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram-section scroll-reveal">
+        <div class="instagram-content">
+            <div class="instagram-header">
+                <h2>Suivez-nous sur Instagram</h2>
+                <a href="https://instagram.com/asnature" target="_blank" class="instagram-handle">
+                    📸 @asnature
+                </a>
+            </div>
+            <div class="instagram-grid">
+                <div class="instagram-post">
+                    <img src="https://images.unsplash.com/photo-1556228994-d6b1971f174c?w=300&h=300&fit=crop" alt="Instagram post" loading="lazy">
+                    <div class="instagram-overlay">
+                        <div class="overlay-stats">
+                            <span>❤️ 245</span>
+                            <span>💬 12</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="instagram-post">
+                    <img src="https://images.unsplash.com/photo-1585933646386-6b83e4093186?w=300&h=300&fit=crop" alt="Instagram post" loading="lazy">
+                    <div class="instagram-overlay">
+                        <div class="overlay-stats">
+                            <span>❤️ 189</span>
+                            <span>💬 8</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="instagram-post">
+                    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=300&fit=crop" alt="Instagram post" loading="lazy">
+                    <div class="instagram-overlay">
+                        <div class="overlay-stats">
+                            <span>❤️ 312</span>
+                            <span>💬 15</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="instagram-post">
+                    <img src="https://images.unsplash.com/photo-1556228994-d6b1971f174c?w=300&h=300&fit=crop" alt="Instagram post" loading="lazy">
+                    <div class="instagram-overlay">
+                        <div class="overlay-stats">
+                            <span>❤️ 267</span>
+                            <span>💬 11</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section scroll-reveal">
+        <div class="testimonials-content">
+            <div class="section-header">
+                <h2>Ce Que Disent Nos Clients</h2>
+                <p>Leur satisfaction est notre plus belle récompense</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">J'adore les produits ASNATURE ! Mon savon à l'argan est devenu mon indispensable quotidien. Ma peau n'a jamais été aussi douce.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h4>Sarah M.</h4>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Des produits authentiques et efficaces. L'huile de figue de barbarie a transformé ma peau. Je recommande vivement !</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">L</div>
+                        <div class="author-info">
+                            <h4>Leila K.</h4>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Enfin des cosmétiques naturels qui fonctionnent vraiment ! Et en plus, l'équipe est adorable. Merci ASNATURE !</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Amina B.</h4>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section scroll-reveal">
+        <div class="newsletter-content">
+            <h2>Restez Informé</h2>
+            <p>Recevez nos nouveautés, conseils beauté et offres exclusives</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Votre adresse email" required>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ASNATURE</h3>
+                <p>Cosmétiques naturels artisanaux pour une beauté authentique et responsable.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/asnature" target="_blank" aria-label="Instagram">📸</a>
+                    <a href="https://facebook.com/asnature" target="_blank" aria-label="Facebook">📘</a>
+                    <a href="https://wa.me/212XXXXXXXXX" target="_blank" aria-label="WhatsApp">📱</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#boutique">Boutique</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Informations</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Livraison & Retours</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Conditions Générales</a></li>
+                    <li><a href="#">Politique de Confidentialité</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📧 contact@asnature.ma</p>
+                <p>📱 +212 6XX XXX XXX</p>
+                <p>📍 Casablanca, Maroc</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ASNATURE. Tous droits réservés. Fait avec 💚 au Maroc.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Cart Management
+        let cart = [];
+
+        // DOM Elements
+        const cartBtn = document.getElementById('cartBtn');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const closeCart = document.getElementById('closeCart');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const cartCount = document.getElementById('cartCount');
+        const cartItemsContainer = document.getElementById('cartItemsContainer');
+        const cartFooter = document.getElementById('cartFooter');
+        const cartTotal = document.getElementById('cartTotal');
+        const whatsappCheckout = document.getElementById('whatsappCheckout');
+        const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+
+        // Toggle Cart
+        cartBtn.addEventListener('click', () => {
+            cartSidebar.classList.add('active');
+            modalOverlay.classList.add('active');
+        });
+
+        closeCart.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+            modalOverlay.classList.remove('active');
+        });
+
+        modalOverlay.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+            modalOverlay.classList.remove('active');
+        });
+
+        // Add to Cart
+        addToCartBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const productName = btn.dataset.product;
+                const productPrice = parseInt(btn.dataset.price);
+                
+                const existingItem = cart.find(item => item.name === productName);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        name: productName,
+                        price: productPrice,
+                        quantity: 1
+                    });
+                }
+                
+                updateCart();
+                
+                // Visual feedback
+                btn.innerHTML = '✓ Ajouté';
+                btn.style.background = 'var(--sage-green)';
+                setTimeout(() => {
+                    btn.innerHTML = '🛒 Ajouter';
+                    btn.style.background = '';
+                }, 1500);
+            });
+        });
+
+        // Update Cart
+        function updateCart() {
+            cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <div class="empty-cart-icon">🛒</div>
+                        <p>Votre panier est vide</p>
+                    </div>
+                `;
+                cartFooter.style.display = 'none';
+            } else {
+                cartItemsContainer.innerHTML = cart.map((item, index) => `
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="https://images.unsplash.com/photo-1556228994-d6b1971f174c?w=100&h=100&fit=crop" alt="${item.name}">
+                        </div>
+                        <div class="cart-item-details">
+                            <h4>${item.name}</h4>
+                            <div class="cart-item-price">${item.price} MAD</div>
+                            <div class="cart-item-quantity">
+                                <button class="qty-btn" onclick="changeQuantity(${index}, -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="qty-btn" onclick="changeQuantity(${index}, 1)">+</button>
+                                <button class="remove-item" onclick="removeItem(${index})">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                cartTotal.textContent = `${total} MAD`;
+                cartFooter.style.display = 'block';
+            }
+        }
+
+        // Change Quantity
+        function changeQuantity(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCart();
+        }
+
+        // Remove Item
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        // WhatsApp Checkout
+        whatsappCheckout.addEventListener('click', () => {
+            const orderText = cart.map(item => 
+                `${item.name} x${item.quantity} - ${item.price * item.quantity} MAD`
+            ).join('%0A');
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const message = `Bonjour ASNATURE! Je souhaite commander:%0A%0A${orderText}%0A%0ATotal: ${total} MAD`;
+            window.open(`https://wa.me/212XXXXXXXXX?text=${message}`, '_blank');
+        });
+
+        // Category Filters
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const category = btn.dataset.category;
+                
+                productCards.forEach(card => {
+                    if (category === 'tous' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Newsletter Form
+        const newsletterForm = document.getElementById('newsletterForm');
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input').value;
+            alert(`Merci de votre inscription ! Nous vous enverrons nos nouveautés à ${email}`);
+            e.target.reset();
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Initialize
+        updateCart();
+    </script>
+</body>
+</html>
